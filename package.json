@@ -1,11 +1,8 @@
 {
   "name": "@snek-functions/template",
   "version": "0.0.1",
-  "private": true,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "type": "module",
-  "description": "Generated with `snek-functions init`",
+  "description": "Generated with `sf new`",
   "author": "snek-at",
   "config": {
     "commitizen": {
@@ -14,11 +11,15 @@
   },
   "dependencies": {
     "@snek-at/function": "*",
-    "graphql-voyager": "^1.0.0-rc.31"
+    "@snek-at/function-server": "*"
   },
   "devDependencies": {
     "commitizen": "^4.2.5",
-    "git-cz": "^4.9.0"
+    "git-cz": "^4.9.0",
+    "@snek-at/function-cli": "*"
   },
-  "scripts": {}
+  "scripts": {
+    "develop": "yarn sf develop",
+    "build": "yarn sf build"
+  }
 }
