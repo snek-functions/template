@@ -1,10 +1,10 @@
-import {configure} from '@snek-at/function'
+import {defineService} from '@snek-at/function'
 
 const helloWorld = () => {
   return 'Hello world!'
 }
 
-export default configure(
+export default defineService(
   {
     Query: {
       helloWorld
