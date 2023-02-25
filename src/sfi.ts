@@ -1,5 +1,11 @@
 import {defineService} from '@snek-at/function'
 
+enum Colors {
+  Red,
+  Green,
+  Blue
+}
+
 const helloWorld = () => {
   return 'Hello world!'
 }
@@ -7,7 +13,13 @@ const helloWorld = () => {
 export default defineService(
   {
     Query: {
-      helloWorld
+      helloWorld,
+      crashBecauseOfBoolean: (): boolean => {
+        return true
+      },
+      getFavColor: (): Colors => {
+        return Colors.Red
+      }
     }
   },
   {
