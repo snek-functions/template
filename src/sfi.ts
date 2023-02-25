@@ -1,9 +1,9 @@
 import {defineService} from '@snek-at/function'
 
 enum Colors {
-  Red,
-  Green,
-  Blue
+  Red = 'red',
+  Green = 'green',
+  Blue = 'blue'
 }
 
 const helloWorld = () => {
