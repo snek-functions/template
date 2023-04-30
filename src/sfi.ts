@@ -1,30 +1,22 @@
-import {defineService} from '@snek-at/function'
-
-enum Colors {
-  Red = 'red',
-  Green = 'green',
-  Blue = 'blue'
-}
-
-const helloWorld = () => {
-  return 'Hello world!'
-}
+import { defineService, logger } from "@snek-at/function";
+import { UserService } from "./services/user.service";
 
 export default defineService(
   {
     Query: {
-      helloWorld,
-      crashBecauseOfBoolean: (): boolean => {
-        return true
-      },
-      getFavColor: (): Colors => {
-        return Colors.Red
-      }
-    }
+      allUser: UserService.allUser,
+      user: UserService.user,
+    },
+    Mutation: {
+      userCreate: UserService.userCreate,
+      userUpdate: UserService.userUpdate,
+      userDelete: UserService.userDelete,
+    },
   },
   {
     configureApp(app) {
-      return app
-    }
+      logger.info("Configuring app");
+      return app;
+    },
   }
-)
+);
